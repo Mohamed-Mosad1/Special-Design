@@ -77,7 +77,7 @@ function randomImg() {
   if (backgroundOption === true) {
     backgroundInterval = setInterval(function () {
       let randomNumber = Math.floor(Math.random() * imgArray.length);
-      landingPage.style.backgroundImage = `url('../img/${imgArray[randomNumber]}')`;
+      landingPage.style.backgroundImage = `url('./img/${imgArray[randomNumber]}')`;
     }, 3000);
   }
 }
