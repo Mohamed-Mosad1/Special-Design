@@ -1,0 +1,83 @@
+/* ============= Grid system ============= */
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .header-area .links {
+    display: none;
+  }
+  .header-area .toggle-menu {
+    display: inline-block !important;
+  }
+  .features .feat-box {
+    width: calc(100% / 2)!important;
+  }
+  .testimonials .ts-box .person-info {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .aboutUs {
+    display: block !important;
+    text-align: center;
+  }
+  .timeline .timeline-content .left,
+  .timeline .timeline-content .right {
+    width: 100%!important;
+    margin-bottom: 20px!important;
+  }
+  .testimonials .ts-box {
+    width: 100%!important;
+    margin-bottom: 10px;
+  }
+  .contact form {
+    display: block!important;
+  }
+  .contact form .left,
+  .contact form .right {
+    width: 100%!important;
+  }
+}
+@media screen and (max-width: 575px) {
+  .intro-text h1 {
+    font-size: 26px;
+  }
+  .aboutUs {
+    display: block !important;
+    text-align: center;
+  }
+  .skills .skillBox {
+    display: block !important;
+  }
+  .skills .skillBox .skillName {
+    width: 100% !important;
+    padding-bottom: 10px;
+  }
+  .features .feat-box {
+    width: 100%!important;
+  }
+}
+@media screen and (max-width: 300px) {
+  :root {
+    font-size: 12px;
+  }
+}
+

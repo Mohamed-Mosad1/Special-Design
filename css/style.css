@@ -1,0 +1,769 @@
+:root {
+  --mainColor: #f57c00;
+  --textWhite: #fff;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+}
+.container {
+  margin: auto;
+}
+::-webkit-scrollbar {
+  background-color: white;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--mainColor);
+}
+/* ==================== Start Setting Box ====================*/
+
+.settingBox {
+  position: fixed;
+  left: -400px;
+  top: 0;
+  width: 400px;
+  min-height: 100vh;
+  background-color: var(--textWhite);
+  transition: 0.5s;
+  z-index: 5000;
+  border: 1px solid #eee;
+}
+.settingBox .toggleSettings {
+  background-color: #eee;
+  cursor: pointer;
+  position: absolute;
+  right: -50px;
+  font-size: 30px;
+  top: 50%;
+}
+.settingBox .toggleSettings .fa-gear {
+  padding: 10px;
+  color: var(--mainColor);
+}
+.settingBox .settingContainer {
+  position: relative;
+}
+.settingBox .fa-xmark {
+  position: absolute;
+  right: 0;
+  top: 25px;
+  padding-right: 15px;
+  cursor: pointer;
+}
+.settingBox .optionBox {
+  padding: 20px;
+  background-color: #eee;
+  text-align: center;
+}
+.settingBox .optionBox h4 {
+  color: #666;
+  padding-bottom: 20px;
+}
+.settingBox .optionBox .colorsList {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+.settingBox .optionBox .colorsList li {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.5;
+  border: 5px solid #eee;
+}
+.settingBox .optionBox .colorsList li.active {
+  opacity: 1;
+  border-color: #fff;
+  box-shadow: 0px 0px 15px 3px var(--mainColor);
+}
+.settingBox .optionBox .colorsList li:first-child {
+  background-color: #f57c00;
+}
+.settingBox .optionBox .colorsList li:nth-child(2) {
+  background-color: #09c;
+}
+.settingBox .optionBox .colorsList li:nth-child(3) {
+  background-color: green;
+}
+.settingBox .optionBox .colorsList li:nth-child(4) {
+  background-color: rebeccapurple;
+}
+.settingBox .optionBox .colorsList li:nth-child(5) {
+  background-color: yellow;
+}
+.settingBox .optionBox .yes,
+.settingBox .optionBox .no {
+  width: 100px;
+  background-color: var(--mainColor);
+  color: var(--textWhite);
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 4px;
+  display: inline-block;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.settingBox .optionBox span.active {
+  opacity: 1;
+}
+.settingBox .reset-options {
+  background-color: #f44336;
+  border: none;
+  width: 90%;
+  margin: 10px auto;
+  display: block;
+  color: var(--textWhite);
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* ==================== End Setting Box ====================*/
+/* ==================== Start Nav Bullets ====================*/
+
+.nav-bullets {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  width: 50px;
+}
+.nav-bullets .bullet {
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--mainColor);
+  margin: 10px auto;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+.nav-bullets .bullet .tooltip {
+  background-color: var(--mainColor);
+  color: var(--textWhite);
+  width: 120px;
+  padding: 4px 10px;
+  position: absolute;
+  top: -6px;
+  right: 32px;
+  font-size: 18px;
+  text-align: center;
+  cursor: default;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.nav-bullets .bullet:hover .tooltip {
+  opacity: 1;
+}
+.nav-bullets .bullet .tooltip::before {
+  content: "";
+  border-style: solid;
+  border-width: 10px;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-color: transparent transparent transparent var(--mainColor);
+  right: -19px;
+  top: 20%;
+}
+
+/* ==================== End Nav Bullets ====================*/
+
+/* ==================== Start Landing Page ====================*/
+.landing-page {
+  min-height: 100vh;
+  background-image: url("./img/06.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.landing-page .container {
+  position: relative;
+  z-index: 1000;
+}
+.landing-page .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+#navbar {
+  background-color: transparent;
+  transition: background-color 2s;
+}
+#navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.header-area {
+  position: fixed;
+  z-index: 2;
+  color: var(--textWhite);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.header-area .logo {
+  padding: 10px;
+}
+.header-area .logo a {
+  text-decoration: none;
+  color: var(--textWhite);
+  font-size: 30px;
+  display: inline-block;
+}
+.header-area .links {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+.header-area .links li {
+  display: inline-block;
+  padding: 0 8px;
+}
+.header-area .links li a,
+.header-area .links.open li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: bold;
+}
+.header-area .links.open li a {
+  color: black;
+}
+.header-area .links li a:hover,
+.header-area .links li a.active,
+.header-area .links.open li a:hover {
+  color: var(--mainColor);
+}
+.header-area .toggle-menu {
+  background: none;
+  border: none;
+  display: none;
+  cursor: pointer;
+  color: white;
+  font-size: 30px;
+  padding-right: 5px;
+}
+.intro-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--textWhite);
+  z-index: 2;
+  text-align: center;
+  width: 90%;
+}
+.intro-text h1 span {
+  color: var(--mainColor);
+}
+.intro-text p {
+  line-height: 1.6;
+  font-size: 20px;
+  color: #ddd;
+  width: 75%;
+  margin: auto;
+}
+.header-area .links.open {
+  background-color: #fff;
+  padding: 10px;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 71px;
+  border-radius: 4px;
+  width: 100%;
+}
+.header-area .links.open li {
+  display: block;
+  margin: 20px 0;
+}
+.header-area .links::before {
+  content: "";
+  border-style: solid;
+  border-width: 15px;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-color: transparent transparent var(--textWhite) transparent;
+  top: -30px;
+  right: 15px;
+}
+/*==================== End Landing Page ====================*/
+
+/*==================== Start About Us ====================*/
+.aboutUs {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  text-align: center;
+}
+.aboutUs .infoBox {
+  flex: 1;
+  padding: 10px;
+}
+.aboutUs .infoBox h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--mainColor);
+  margin: 0 0 10px;
+}
+.aboutUs .infoBox p {
+  line-height: 1.8;
+  color: #767676;
+  margin: 0;
+}
+.aboutUs .imgbox {
+  flex: 1;
+  text-align: center;
+}
+.aboutUs .imgbox img {
+  width: 250px;
+}
+/*==================== End About Us ====================*/
+/*==================== Start Our Skills ====================*/
+.bg-color {
+  background-color: #eee;
+}
+.skills {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.skills h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--mainColor);
+  margin: 0 0 50px;
+  text-align: center;
+}
+.skills .skillBox {
+  background-color: #fff;
+  display: flex;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+.skills .skillBox .skillName {
+  font-weight: bold;
+  width: 140px;
+  text-align: center;
+  line-height: 30px;
+}
+.skills .skillBox .skillProgress {
+  height: 30px;
+  width: 100%;
+  background-color: #f6f6f6;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+.skills .skillBox .skillProgress span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--mainColor);
+  transition: all 2s;
+}
+/*==================== End Our Skills ====================*/
+/*==================== Start Gallery ====================*/
+.gallery {
+  padding: 50px 0;
+  text-align: center;
+}
+.gallery h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--mainColor);
+  margin: 0 0 50px;
+  text-align: center;
+}
+.gallery .images-box {
+  text-align: center;
+}
+
+.gallery .images-box img {
+  width: calc(99% / 3);
+  padding: 3px;
+  background-color: #f6f6f6;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+.popup-overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+.popup-box {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 3px solid #ccc;
+  padding: 20px;
+  z-index: 1001;
+}
+.popup-box h3 {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--mainColor);
+  margin: 0 0 20px;
+  text-align: center;
+}
+.popup-box img {
+  max-width: 100%;
+}
+.close-btn {
+  position: absolute;
+  right: -15px;
+  top: -15px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--mainColor);
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/*==================== End Gallery ====================*/
+/*==================== Start Timeline ====================*/
+.timeline {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #eee;
+}
+.timeline .timeline-content {
+  position: relative;
+  overflow: hidden;
+}
+.timeline .timeline-content::before {
+  content: "";
+  width: 2px;
+  height: 100%;
+  background-color: var(--mainColor);
+  position: absolute;
+  left: 50%;
+  margin-left: -1px;
+  top: 0;
+}
+.timeline .timeline-content .year {
+  position: relative;
+  margin: 20px auto;
+  width: 50px;
+  background-color: var(--mainColor);
+  border-radius: 4px;
+  text-align: center;
+  color: #fff;
+  padding: 2px;
+  font-weight: bold;
+  z-index: 2;
+}
+.timeline .timeline-content .left,
+.timeline .timeline-content .right {
+  width: calc(50% - 25px);
+  margin-top: 30px;
+  position: relative;
+}
+.timeline .timeline-content .left {
+  float: left;
+}
+.timeline .timeline-content .left::before {
+  margin-left: -7px;
+  right: -35px;
+}
+.timeline .timeline-content .right {
+  float: right;
+}
+.timeline .timeline-content .right::before {
+  left: -35px;
+  margin-left: 0;
+}
+.timeline .timeline-content .right::before,
+.timeline .timeline-content .left::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
+  border: 3px solid var(--mainColor);
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+}
+.timeline .timeline-content .content {
+  padding: 20px;
+  background-color: #fff;
+}
+.timeline .timeline-content .content h3 {
+  margin: 0 0 10px;
+  font-weight: bold;
+  color: var(--mainColor);
+}
+.timeline .timeline-content .content p {
+  margin: 0;
+  line-height: 1.8;
+  color: #767676;
+}
+.clear-fix {
+  clear: both;
+}
+.timeline .timeline-content .left .content::before {
+  border-color: transparent transparent transparent #fff;
+  right: -19px;
+}
+.timeline .timeline-content .right .content::before {
+  border-color: transparent #fff transparent transparent;
+  left: -19px;
+}
+.timeline .timeline-content .left .content::before,
+.timeline .timeline-content .right .content::before {
+  content: "";
+  border-style: solid;
+  border-width: 10px;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 20px;
+}
+/*==================== End Timeline ====================*/
+/*==================== Start Features ====================*/
+.features {
+  padding: 80px 0;
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--mainColor);
+  margin: 0 0 60px;
+  text-align: center;
+}
+.features h2 {
+  margin-bottom: 30px;
+}
+.features .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.features .feat-box {
+  width: calc(100% / 3);
+  padding: 10px;
+}
+.features .feat-box img {
+  width: 70%;
+  border-radius: 50px;
+  padding-bottom: 10px;
+}
+.features .feat-box h4 {
+  font-size: 22px;
+  margin: 15px 0 40px;
+  position: relative;
+  color: black;
+}
+.features .feat-box h4::before {
+  content: "";
+  width: 40px;
+  height: 4px;
+  background-color: var(--mainColor);
+  position: absolute;
+  left: 50%;
+  margin-left: -20px;
+  bottom: -22px;
+}
+.features .feat-box p {
+  width: 80%;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: #706f6f;
+  font-size: 15px;
+}
+/*==================== End Features ====================*/
+/*==================== Start Testimonials ====================*/
+
+.testimonials {
+  min-height: 600px;
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+.testimonials::before {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: var(--mainColor);
+}
+.testimonials::after {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #333;
+}
+.testimonials h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: #fff;
+  margin: 0 0 60px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.testimonials .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.testimonials .ts-box {
+  width: calc(100% / 3);
+  padding: 15px;
+  position: relative;
+  font-size: 22px;
+  background-color: #fff;
+  z-index: 2;
+}
+.testimonials .ts-box > p {
+  line-height: 1.8;
+  color: #706f6f;
+  font-size: 18px;
+  margin: 0 0 20px;
+  position: relative;
+}
+.testimonials .ts-box .person-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+.testimonials .ts-box .person-info img {
+  border-radius: 50%;
+}
+.testimonials .ts-box .person-info .dis-flex {
+  padding-left: 10px;
+}
+.testimonials .ts-box .person-info h4 {
+  padding-bottom: 5px;
+}
+.testimonials .ts-box .person-info p {
+  color: #707070;
+  margin: 0;
+}
+/*==================== End Testimonials ====================*/
+/*==================== Start Contact Us ====================*/
+
+.contact {
+  min-height: 600px;
+  background-image: url("./img/worldwide-connection-gray-background-illustration-vector_53876-76827.avif");
+  background-size: cover;
+  padding: 80px 0;
+  position: relative;
+}
+.contact .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.contact .container {
+  position: relative;
+  z-index: 2;
+}
+.contact h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--mainColor);
+  margin: 0 0 60px;
+  text-align: center;
+}
+.contact form {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 80%;
+}
+.contact form .left {
+  width: 48%;
+}
+.contact form .right {
+  width: 48%;
+}
+.contact form input {
+  height: 40px;
+}
+.contact form textarea {
+  height: 150px;
+  resize: none;
+}
+.contact form input:not([type="submit"]),
+.contact form textarea {
+  width: 100%;
+  display: block;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(218, 218, 218, 0.19);
+}
+.contact form input:not([type="submit"]):focus,
+.contact form textarea:focus {
+  outline: none;
+}
+.contact form input[type="submit"] {
+  padding: 10px;
+  width: 100%;
+  border: transparent;
+  background-color: var(--mainColor);
+  color: var(--textWhite);
+  cursor: pointer;
+  border-radius: 10px;
+}
+.contact form textarea:focus:-webkit-input-placeholder,
+.contact form input:not([type="submit"]):focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: 0.5s;
+}
+.contact form textarea:focus::-moz-placeholder,
+.contact form input:not([type="submit"]):focus::-moz-placeholder {
+  opacity: 0;
+  transition: 0.5s;
+}
+.contact form textarea:focus::placeholder,
+.contact form input:not([type="submit"]):focus::placeholder {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+/*==================== End Contact Us ====================*/
+footer {
+  background-color: var(--mainColor);
+  color: var(--textWhite);
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+}
